@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;400&display=swap');
+
+:root {
+  --primary-color: #dfdbe5;
+  --border-radius: 5px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Alegreya Sans", sans-serif;
+  background-color: var(--primary-color);
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='64' viewBox='0 0 32 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 28h20V16h-4v8H4V4h28v28h-4V8H8v12h4v-8h12v20H0v-4zm12 8h20v4H16v24H0v-4h12V36zm16 12h-4v12h8v4H20V44h12v12h-4v-8zM0 36h8v20H0v-4h4V40H0v-4z' fill='%2300596e' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+h1 {
+  color: white;
+  padding: 20px;
+  background: rgba(0,0,0, 0.5);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+  width: 275px;
+  margin: 20px auto 10px;
+  -webkit-user-select: none;
+  user-select: none;
+
+}
+
+h1:hover {
+  background: rgba(0,0,0, 0.8);
+}
+
+/* Bookmarks */
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.item {
+  background: rgba(0,0,0, 0.5);
+  color: white;
+  border-radius: var(--border-radius);
+  padding: 20px;
+  margin: 10px;
+}
+
+.item:hover {
+  background: rgba(0,0,0, 0.6);
+}
+
+a {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+a:link, 
+a:visited {
+  color: white;
+  text-decoration:none;
+}
+
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+.fa-solid {
+  float: right;
+  cursor: pointer;
+  /* z-index is a property that will keep the icon on top all the time bc it has the highest z-index of all other */
+  z-index: 2; 
+}
+
+.name {
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+/* Any image element that ALSO has the class of name as its parent */
+.name img { 
+  height: 20px;
+  width: 20px;
+  vertical-align: sub;
+  margin-right: 5px;;
+}
+
+/* Modal */
+.modal-container {
+  background: rgba(0,0,0, 0.6);
+  display: none;
+  position: fixed;
+  /* stretch to the whole page */
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.show-modal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0, 0.8);
+  /* This will make it look great on mobile */
+  max-width: 95%;
+  /* And this will set it to 500px max on desktop */
+  width: 500px;
+  animation: modalopen 1s;
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.close-icon {
+  float: right; 
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  position: relative;
+  top: 13px;
+  right: 13px;
+}
+
+.modal-header{
+  background: rgb(129, 90, 168);
+  color: white;
+  padding: 15px;
+}
+
+h3{
+  margin: 0;
+}
+
+.modal-content{
+  padding: 20px;
+  background: whitesmoke;
+}
+
+/* Form */
+
+.form-group {
+  height: 55px;
+}
+.form-input {
+  width: 97%;
+  padding: 5px;
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  display: block;
+  outline: none;
+}
+
+.form-label{
+  color: rgb(129, 90, 168);
+  display:block;
+}
+
+button {
+  cursor: pointer;
+  color: white;
+  background-color: rgb(129, 90, 168);
+  height: 30px;
+  width: 100px;
+  border: none;
+  border-radius: var(--border-radius);
+  margin-top: 10px;
+}
+
+button:hover {
+  filter: brightness(110%);
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Media Query: Large Smartphone (Vertical) */
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+}
